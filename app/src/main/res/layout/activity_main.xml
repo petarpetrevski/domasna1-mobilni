@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextHeader"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="@color/dark_gray"
+        android:ems="8"
+        android:paddingLeft="15px"
+        android:text="Favorite Twitter Searches"
+        android:textColor="@color/white"/>
+
+    <LinearLayout
+        android:id="@+id/searchLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextHeader"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <EditText
+            android:id="@+id/inputSearch"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="Enter Twitter search query here"
+            android:textColor="@color/dark_gray"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tagLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchLinear"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <EditText
+            android:id="@+id/inputTag"
+            android:layout_width="wrap_content"
+            android:layout_height="58dp"
+            android:layout_weight="70"
+            android:text="Tag your query"
+            android:textColor="@color/dark_gray"
+        />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="30"
+            android:text="Save"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/gray"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/scrollTitle"
+        android:layout_below="@id/tagLinear"
+        android:background="@color/scrollview_bg"
+        android:layout_marginHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Tagged Searches"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/clearLinear"
+        android:layout_below="@id/scrollTitle"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/scrollview_bg">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/query1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+
+                <TextView
+                    android:id="@+id/query1Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="100"
+                    android:background="@color/gray"
+                    android:paddingTop="11dp"
+                    android:text="Petar Petrevski"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/query1Button"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="@color/gray"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Edit"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/query2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/query1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+
+                <TextView
+                    android:id="@+id/query2Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="100"
+                    android:background="@color/gray"
+                    android:paddingTop="11dp"
+                    android:text="Kristijan Kuzmanovski"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/query2Button"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="@color/gray"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Edit"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/query3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/query2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+
+                <TextView
+                    android:id="@+id/query3Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="100"
+                    android:background="@color/gray"
+                    android:paddingTop="11dp"
+                    android:text="Ivan Petkovski"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/query3Button"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="@color/gray"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Edit"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/query4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/query3"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+
+                <TextView
+                    android:id="@+id/query4Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="100"
+                    android:background="@color/gray"
+                    android:paddingTop="11dp"
+                    android:text="Jasmina Gjorgievska"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/query4Button"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="@color/gray"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Edit"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/query5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/query4"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+
+                <TextView
+                    android:id="@+id/query5Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="100"
+                    android:background="@color/gray"
+                    android:paddingTop="11dp"
+                    android:text="Stefan Trajanovski"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/query5Button"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="@color/gray"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Edit"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/query6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/query5"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+
+                <TextView
+                    android:id="@+id/query6Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="100"
+                    android:background="@color/gray"
+                    android:paddingTop="11dp"
+                    android:text="Marija Shundovska"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/query6Button"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="@color/gray"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Edit"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/query7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/query6"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+
+                <TextView
+                    android:id="@+id/query7Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="100"
+                    android:background="@color/gray"
+                    android:paddingTop="11dp"
+                    android:text="Emilija Dojchinovska"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/query7Button"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="@color/gray"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Edit"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/query8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/query7"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+
+                <TextView
+                    android:id="@+id/query8Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="100"
+                    android:background="@color/gray"
+                    android:paddingTop="11dp"
+                    android:text="Vangel Petrov"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/query8Button"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="@color/gray"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Edit"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/query9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/query8"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+
+                <TextView
+                    android:id="@+id/query9Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="100"
+                    android:background="@color/gray"
+                    android:paddingTop="11dp"
+                    android:text="Dimitar Petkovski"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/query9Button"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="@color/gray"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Edit"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/query10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/query9"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+
+                <TextView
+                    android:id="@+id/query10Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="100"
+                    android:background="@color/gray"
+                    android:paddingTop="11dp"
+                    android:text="Anastasija Najdovska"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/query10Button"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="@color/gray"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Edit"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/query11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/query10"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+
+                <TextView
+                    android:id="@+id/query11Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="100"
+                    android:background="@color/gray"
+                    android:paddingTop="11dp"
+                    android:text="Filip Angelovski"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/query11Button"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="@color/gray"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Edit"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/query12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/query11"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+
+                <TextView
+                    android:id="@+id/query12Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="100"
+                    android:background="@color/gray"
+                    android:paddingTop="11dp"
+                    android:text="Simona Kovachev"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/query12Button"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="@color/gray"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="Edit"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/clearLinear"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/gray"
+            android:textColor="@color/black"
+            android:layout_weight="100"
+            android:text="Clear Tags" />
+    </LinearLayout>
+
+</RelativeLayout>
